@@ -59,6 +59,16 @@ class VelCommand:
 
 
 @dataclass
+class PosCommand:
+    """This dataclass represents a quadrotor position command (x, y, z, psi) """
+    x:     float = 0.0
+    y:     float = 0.0
+    z:     float = 0.0
+    psi:  float = 0.0
+
+
+
+@dataclass
 class State:
     """This dataclass represents the system state (pos and vel) """
     x_pos:  float = 0.0

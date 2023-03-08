@@ -155,11 +155,25 @@ class Quadrotor():
 
 
     def position_setpoint_sim(self, pos_cmd):
-        pass
+        # advance state using pos_cmd
+        self._state.x_pos = pos_cmd.x
+        self._state.y_pos = pos_cmd.y
+        self._state.z_pos = pos_cmd.z
+        self._state.psi = pos_cmd.psi
+
+        # store updates
+        self.update_state_trace()
 
 
     def position_setpoint_hw(self, pos_cmd):
-        pass 
+        self.scf.cf.commander.send_position_setpoint(pos_cmd.x,
+                                            pos_cmd.y,
+                                            pos_cmd.z,
+                                            pos_cmd.phi)
+        time.sleep(0.1)
+
+        # store updates
+        self.update_state_trace()
 
 
     def task_complete(self):
