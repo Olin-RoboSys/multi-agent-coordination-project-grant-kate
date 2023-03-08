@@ -206,9 +206,12 @@ class Quadrotor():
     def get_pos(self):
         return Position(x=self._state.x_pos, y=self._state.y_pos, z=self._state.z_pos)
 
+    def get_trajectory(self):
+        return self._trajectory
 
     def get_attitude(self):
         return
+
 
     def take_off(self):
         if self._hardware_flag:
