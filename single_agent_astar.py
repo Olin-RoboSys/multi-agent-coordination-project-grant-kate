@@ -63,9 +63,9 @@ def astar(start_pos, end_pos, map):
             children.append(new_child)
         
         for child in children:
-            for n in closed_list:
-                if child == n and n.f < child.f:
-                    continue
+                        #for n in closed_list:
+            #    if child == n and n.f < child.f:
+            #        continue
             
             child.g = q.g + 1
             # child.h = child.manhattan_dist(end)
@@ -74,11 +74,11 @@ def astar(start_pos, end_pos, map):
             child.h = ((child.pos[0] - end.pos[0]) ** 2) + ((child.pos[1] - end.pos[1]) ** 2)
             child.f = child.g + child.h
 
+            if child not in open_list and child not in closed_list:
+                open_list.append(child)
             for n in open_list:
-                if child == n and n.f < child.f:
-                    continue
-            
-            open_list.append(child)
+                if child == n and n.f > child.f:
+                    open_list.append(child)
 
         closed_list.append(q)
 
