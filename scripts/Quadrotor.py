@@ -169,7 +169,7 @@ class Quadrotor():
         self.scf.cf.commander.send_position_setpoint(pos_cmd.x,
                                             pos_cmd.y,
                                             pos_cmd.z,
-                                            pos_cmd.phi)
+                                            pos_cmd.yaw)
         time.sleep(0.1)
 
         # store updates

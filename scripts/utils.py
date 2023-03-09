@@ -64,7 +64,7 @@ class PosCommand:
     x:     float = 0.0
     y:     float = 0.0
     z:     float = 0.0
-    psi:  float = 0.0
+    yaw:   float = 0.0
 
 
 
