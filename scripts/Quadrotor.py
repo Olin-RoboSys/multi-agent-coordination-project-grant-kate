@@ -159,7 +159,7 @@ class Quadrotor():
         self._state.x_pos = pos_cmd.x
         self._state.y_pos = pos_cmd.y
         self._state.z_pos = pos_cmd.z
-        self._state.psi = pos_cmd.psi
+        self._state.psi = pos_cmd.yaw
 
         # store updates
         self.update_state_trace()
